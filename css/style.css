@@ -166,6 +166,36 @@ body {
     background: url("../images/icon_linkArrow.svg") no-repeat center;
 }
 
+@media screen and (max-width: 1280px) {
+    .section-top {
+    }
+    .section-top > h2 {
+    }
+    .section-top > p {
+    }
+}
+@media screen and (max-width: 1024px) {
+    .section-top {
+    }
+    .section-top > h2 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+    .section-top > p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+@media screen and (max-width: 760px) {
+    .section-top {
+    }
+    .section-top > h2 {
+    }
+    .section-top > p {
+    }
+}
+
 /* 플라잉 배너 */
 .fix-banner {
     position: fixed;
@@ -234,6 +264,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+
     width: 455px;
     height: 50px;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -418,39 +449,44 @@ body {
         padding-top: 15px;
         height: 230px;
     }
-    .header-left {
-        width: 100%;
-    }
     .logo {
         width: 77px;
         height: 18px;
         margin-left: 15px;
+    }
+
+    .header-left {
+        width: 100%;
     }
     .search {
         left: 50%;
         transform: translateX(-50%);
         top: 140px;
     }
+
     .member-list {
         display: none;
     }
     .mb-mypage {
         display: block;
     }
+
     .header-down {
         text-align: center;
     }
     .service-list {
         display: inline-block;
         float: none;
-        margin-top: 0;
+        margin-top: 0px;
     }
+
     .service-list li {
         padding-right: 20px;
     }
     .service-list li:last-child {
-        margin-right: 0;
+        margin-right: 0px;
     }
+
     .service-list li a {
         font-size: 12px;
         font-weight: 400;
@@ -461,6 +497,7 @@ body {
         height: 48px;
         margin: 0 auto;
     }
+
     .service-menu {
         display: none;
     }
@@ -475,6 +512,12 @@ body {
 .promotion .inner {
     height: 345px;
 }
+
+.promotion .section-top {
+    display: none;
+    margin-bottom: 20px;
+}
+
 .promotion-slide {
     height: 100%;
 }
@@ -486,6 +529,78 @@ body {
 .sw-promotion a img {
     width: 100%;
     height: auto;
+}
+.sw-promotion-control {
+    position: relative;
+    display: none;
+    text-align: center;
+}
+.sw-promotion-pg {
+    display: inline-block;
+}
+
+@media screen and (max-width: 1280px) {
+    .promotion .inner {
+        height: 275px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .promotion {
+    }
+    .promotion .inner {
+        height: 300px;
+        border-bottom: 8px solid #f0f4f4;
+    }
+    .promotion .section-top {
+        display: block;
+    }
+
+    .promotion .sw-bt {
+        display: none;
+    }
+
+    .sw-promotion-control {
+        display: block;
+    }
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        opacity: 0.2;
+        background: black;
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: black;
+    }
+}
+@media screen and (max-width: 760px) {
+    .promotion .inner {
+        height: 290px;
+    }
+    .sw-promotion {
+        /* 화면의 너비에 비해 줄어드는 것은 맞다  */
+        /* 하지만 일정 너비 이하로는 줄어들지 않았으면 좋겠다.  */
+        width: 50%;
+        min-width: 350px;
+    }
+    .sw-promotion-control {
+        margin-top: -20px;
+        z-index: 999;
+    }
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        opacity: 0.3;
+        background: 조ㅑㅅㄷ;
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: white;
+        width: 8px;
+        height: 8px;
+    }
 }
 
 /* 쇼핑추천 */
