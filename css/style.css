@@ -1266,6 +1266,7 @@ body {
     .live .section-slide {
         height: 285px;
     }
+
     .live-info {
         padding: 12px;
     }
@@ -1353,9 +1354,11 @@ body {
 .books .section-slide {
     /* height: 400px; */
 }
+
 .books .section-slide .sw-bt {
     top: 41%;
 }
+
 .sw-books {
     height: 100%;
 }
@@ -1449,6 +1452,7 @@ body {
     height: 100%;
 }
 .events-link {
+    position: relative;
     display: block;
     width: 100%;
     height: 100%;
@@ -1464,6 +1468,12 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     mix-blend-mode: multiply;
+}
+
+@media screen and (max-width: 1024px) {
+    .event {
+        display: none;
+    }
 }
 
 /* 하단 */
