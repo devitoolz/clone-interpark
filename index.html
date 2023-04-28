@@ -726,7 +726,7 @@
                         </div>
                         <script>
                             new Swiper(".sw-ticket", {
-                                slidesPerView: 5,
+                                slidesPerView: "auto",
                                 spaceBetween: 10,
                                 breakpoints: {
                                     1024: {
@@ -868,7 +868,17 @@
                         <script>
                             new Swiper(".sw-live", {
                                 slidesPerView: 4,
-                                spaceBetween: 27,
+                                spaceBetween: 10,
+                                breakpoints: {
+                                    1024: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 32,
+                                    },
+                                    1280: {
+                                        slidesPerView: 4,
+                                        spaceBetween: 27,
+                                    },
+                                },
                             });
                         </script>
                     </div>
@@ -952,12 +962,89 @@
                                         </div>
                                     </a>
                                 </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="books-link">
+                                        <div class="books-img">
+                                            <img src="images/book1.jpg" alt="book" />
+                                        </div>
+                                        <div class="books-info">
+                                            <p class="books-info-title">New 대한민국 청약지도</p>
+                                            <p class="books-info-price"><em>18,000</em>원</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="books-link">
+                                        <div class="books-img">
+                                            <img src="images/book2.jpg" alt="book" />
+                                        </div>
+                                        <div class="books-info">
+                                            <p class="books-info-title">New 대한민국 청약지도</p>
+                                            <p class="books-info-price"><em>18,000</em>원</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="books-link">
+                                        <div class="books-img">
+                                            <img src="images/book3.jpg" alt="book" />
+                                        </div>
+                                        <div class="books-info">
+                                            <p class="books-info-title">New 대한민국 청약지도</p>
+                                            <p class="books-info-price"><em>18,000</em>원</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="books-link">
+                                        <div class="books-img">
+                                            <img src="images/book4.jpg" alt="book" />
+                                        </div>
+                                        <div class="books-info">
+                                            <p class="books-info-title">New 대한민국 청약지도</p>
+                                            <p class="books-info-price"><em>18,000</em>원</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="books-link">
+                                        <div class="books-img">
+                                            <img src="images/book5.jpg" alt="book" />
+                                        </div>
+                                        <div class="books-info">
+                                            <p class="books-info-title">New 대한민국 청약지도</p>
+                                            <p class="books-info-price"><em>18,000</em>원</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <script>
                             new Swiper(".sw-books", {
-                                slidesPerView: 5,
-                                spaceBetween: 28,
+                                slidesPerView: 3,
+                                grid: {
+                                    rows: 4,
+                                    fill: "row",
+                                },
+                                spaceBetween: 19,
+                                breakpoints: {
+                                    1024: {
+                                        slidesPerView: 3,
+                                        grid: {
+                                            rows: 1,
+                                        },
+                                        slidesPerGroup: 3,
+                                        spaceBetween: 30,
+                                    },
+                                    1280: {
+                                        slidesPerView: 5,
+                                        grid: {
+                                            rows: 1,
+                                        },
+                                        slidesPerGroup: 5,
+                                        spaceBetween: 27,
+                                    },
+                                },
                             });
                         </script>
                     </div>
