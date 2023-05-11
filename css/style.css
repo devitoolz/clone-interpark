@@ -76,6 +76,11 @@ body {
     font-size: 0;
     cursor: pointer;
 }
+
+.swiper-button-disabled {
+    display: none;
+}
+
 .sw-next {
     position: absolute;
     top: 50%;
@@ -377,6 +382,7 @@ body {
     background: url("../images/logo.svg") no-repeat center;
     background-size: contain;
 }
+
 .search {
     position: absolute;
     top: 0;
@@ -457,19 +463,28 @@ body {
     vertical-align: 3px;
     margin-left: 5px;
 }
+
+.mypage-bt {
+    padding-bottom: 10px;
+}
+
 .mypage-bt:hover .mypage {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .mypage {
-    display: none;
+    z-index: 9999;
+    visibility: hidden;
     position: absolute;
     top: 25px;
     right: 0;
     background: #fff;
     padding: 20px;
     border-radius: 13px;
+    opacity: 0;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    transition: all 0s;
 }
 
 .mypage-list {
