@@ -1,0 +1,6 @@
+{
+  "event_1": { "link": "#", "pic": "banner1", "alt": "이벤트 1" },
+  "event_2": { "link": "#", "pic": "banner2", "alt": "이벤트 2" },
+  "event_3": { "link": "#", "pic": "banner3", "alt": "이벤트 3" },
+  "event_4": { "link": "#", "pic": "banner4", "alt": "이벤트 4" }
+}

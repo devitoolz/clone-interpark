@@ -81,7 +81,7 @@ window.addEventListener('load', () => {
   btns.forEach((btn) => {
     btn.onclick = (e) => {
       e.preventDefault();
-      fetchData('tour', btn.innerHTML, makeTourSlide);
+      fetchData('tour', makeTourSlide, btn.innerHTML);
       btns.forEach((btn) => {
         btn.classList.remove('btns-active');
       });

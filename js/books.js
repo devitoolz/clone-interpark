@@ -1,73 +1,34 @@
-window.addEventListener('load', function () {
-  // 선택된 출력 리스트 인덱스
-  let xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function (event) {
-    let req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      let data = JSON.parse(req.response);
-      parseBooks(data);
-    }
-  };
-  xhr.open('GET', 'data/books.json');
-  xhr.send();
+window.addEventListener('load', () => {
+  let booksSwiper;
 
-  // json Data 보관
-  let jsonData;
-  // 버튼들
-  let btns = this.document.querySelector('.books .btns');
-  function parseBooks(_data) {
-    jsonData = _data;
-    // a 태그 만들기
-    let btHtml = ``;
-    let dataArr = _data.books;
-    for (let i = 0; i < dataArr.length; i++) {
-      let temp = `<a href="#" >${dataArr[i].catename}</a>`;
-      btHtml += temp;
-    }
-    btns.innerHTML = btHtml;
+  const makeBooksSlide = (_data) => {
+    let swBooksHtml = ``;
 
-    makeList(0);
-
-    let aTags = document.querySelectorAll('.books .btns a');
-    for (let i = 0; i < dataArr.length; i++) {
-      aTags[i].onclick = function (event) {
-        event.preventDefault();
-        makeList(i);
-      };
-    }
-  }
-
-  // 목록 html 만들기
-  function makeList(_idx) {
-    let html = ``;
-    let listData = jsonData.books[_idx].list;
-    let listTotal = listData.length;
-    for (let i = 0; i < listTotal; i++) {
-      let obj = listData[i];
+    for (let book in _data) {
+      let obj = _data[book];
       let temp = `
-                <div class="swiper-slide">
-                <a href="${obj.link}" class="books-link">
-                <div class="books-img">
-                    <img src="images/${obj.img}" alt="${obj.alt}" />
-                </div>
-                <div class="books-info">
-                    <p class="books-info-title">${obj.title}</p>
-                    <p class="books-info-price"><em>${obj.price}</em>원</p>
-                </div>
-                </a>
+        <div class="swiper-slide">
+          <a href="${obj.link}" class="books-link">
+            <div class="books-img">
+              <img src="images/${obj.img}" alt="${obj.alt}" />
             </div>
-            `;
-      html += temp;
+            <div class="books-info">
+              <p class="books-info-title">${obj.title}</p>
+              <p class="books-info-price"><em>${obj.price}</em>원</p>
+            </div>
+          </a>
+        </div>
+      `;
+      swBooksHtml += temp;
     }
 
-    let swWrap = document.querySelector('.sw-books .swiper-wrapper');
-    swWrap.innerHTML = html;
-
-    let booksSwiper;
+    let swBooksWrapper = document.querySelector('.sw-books .swiper-wrapper');
+    swBooksWrapper.innerHTML = swBooksHtml;
 
     if (booksSwiper) {
-      booksSwiper.destory();
+      booksSwiper.destroy();
     }
+
     booksSwiper = new Swiper('.sw-books', {
       slidesPerView: 3,
       grid: {
@@ -98,5 +59,22 @@ window.addEventListener('load', function () {
         },
       },
     });
-  }
+  };
+
+  fetchData('books', makeBooksSlide, `MD's Pick`);
+
+  const btns = document.querySelectorAll('.books .btns a');
+
+  btns.forEach((btn) => {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      fetchData('books', makeBooksSlide, btn.innerHTML);
+      btns.forEach((btn) => {
+        btn.classList.remove('btns-active');
+      });
+      btn.classList.add('btns-active');
+    };
+  });
+
+  btns[0].classList.add('btns-active');
 });

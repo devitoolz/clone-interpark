@@ -24,7 +24,9 @@ window.addEventListener('load', () => {
                     <li>
                         <span class="ticket-date">${obj.date}</span>
                     </li>
-                    <li ${obj.sale ? 'style=display:block' : 'style=display:none'}><span class="ticket-sale">${obj.sale}</span></li>
+                    <li ${
+                      obj.sale ? 'style=display:block' : 'style=display:none'
+                    }><span class="ticket-sale">${obj.sale}</span></li>
                 </ul>
             </div>
           </a>
@@ -66,7 +68,7 @@ window.addEventListener('load', () => {
   btns.forEach((btn) => {
     btn.onclick = (e) => {
       e.preventDefault();
-      fetchData('ticket', btn.innerHTML, makeTicketSlide);
+      fetchData('ticket', makeTicketSlide, btn.innerHTML);
       btns.forEach((btn) => {
         btn.classList.remove('btns-active');
       });

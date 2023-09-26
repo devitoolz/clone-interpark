@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
     btn.onclick = (e) => {
       if (btn.innerHTML !== '소담상회') {
         e.preventDefault();
-        fetchData('shopping', btn.innerHTML, makeShoppingSlide);
+        fetchData('shopping', makeShoppingSlide, btn.innerHTML);
         btns.forEach((btn) => {
           btn.classList.remove('btns-active');
         });
